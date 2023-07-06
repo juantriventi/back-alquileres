@@ -41,7 +41,7 @@ exports.eliminarReserva = (req, res) => {
 
   Reserva.findByIdAndRemove(reservaId)
     .then(() => {
-      res.send(`Se elimino la reserva de ${persona} correctamente`);
+      res.send(`Se elimino la reserva de ${reservaId} correctamente`);
     })
     .catch((error) => {
       console.error(`Error al eliminar la reserva de alquiler con ID ${reservaId}:`, error);

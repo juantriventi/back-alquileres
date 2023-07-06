@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const reservaRouter = require('./routers/reservaRouters');
 const tareaRouter = require('./routers/tareaRouter')
+const usuarioRouter = require ('./routers/usuarioRouter');
 
 const app = express();
 const port = 3000;
@@ -29,7 +30,8 @@ mongoose.connect('mongodb://localhost:27017/bungalows', {
 
 // Ruta base para las reservas de alquiler
 app.use('/reservas', reservaRouter);
-app.use('/tareas', tareaRouter)
+app.use('/tareas', tareaRouter);
+app.use('/usuarios', usuarioRouter);
 
 // Iniciar el servidor
 app.listen(port, () => {
